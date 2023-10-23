@@ -8,6 +8,10 @@ export default function TokenRequestForm() {
     const [status, setStatus] = useState<
         "loading" | "success" | "error" | "idle"
     >("idle");
+    const [error, setError] = useState({
+        message: "",
+        errorArr: "",
+    });
     const [result, setResult] = useState({
         accessToken: "",
         athleteName: "",
@@ -38,8 +42,20 @@ export default function TokenRequestForm() {
             });
         });
         response.catch((err) => {
-            setStatus(err);
+            setStatus("error");
             console.log("Error!", err);
+            let message = "Unknown error";
+            let errArr = "";
+            if (typeof err.message === "string") {
+                message = err.message;
+            }
+            if (err.response.data) {
+                errArr = JSON.stringify(err.response.data);
+            }
+            setError({
+                message: message,
+                errorArr: errArr,
+            });
         });
     };
 
@@ -49,6 +65,15 @@ export default function TokenRequestForm() {
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-2 p-4 bg-base-200 m-4 rounded-xl w-1/2"
             >
+                <div>
+                    <h4 className="text-lg font-medium text-base-content text-center">
+                        Access Token Request
+                    </h4>
+                    <p className="text-sm font-light text-base-content">
+                        Submit this form to receive an Access Token from Strava
+                    </p>
+                </div>
+                <div className="divider divider-vertical m-0"></div>
                 <div className="flex flex-col md:flex-row md:justify-between">
                     <label htmlFor="client_id" className="label">
                         <span className="label-text">Client ID:</span>
@@ -123,24 +148,41 @@ export default function TokenRequestForm() {
                 </div>
                 <div className="divider divider-vertical m-0"></div>
                 {status === "success" && (
-                    <div>
+                    <div className="flex flex-col gap-2">
                         <h4 className="text-success font-medium text-center">
                             Success!
                         </h4>
-                        <ul>
-                            <li>
-                                <strong>Athlete name:</strong>
+                        <div className="p-2 bg-base-300 rounded-lg">
+                            <h5 className="font-medium">Athlete name:</h5>
+                            <p className="px-4 break-all">
                                 {result.athleteName}
-                            </li>
-                            <li>
-                                <strong>Access Token:</strong>
+                            </p>
+                        </div>
+                        <div className="p-2 bg-base-300 rounded-lg">
+                            <h5 className="font-medium">Access Token:</h5>
+                            <p className="px-4 break-all">
                                 {result.accessToken}
-                            </li>
-                            <li>
-                                <strong>Expires in:</strong>
-                                {result.expiresIn}
-                            </li>
-                        </ul>
+                            </p>
+                        </div>
+                        <div className="p-2 bg-base-300 rounded-lg">
+                            <h5 className="font-medium">Expires in:</h5>
+                            <p className="px-4 break-all">{result.expiresIn}</p>
+                        </div>
+                    </div>
+                )}
+                {status === "error" && (
+                    <div>
+                        <h4 className="text-error font-medium text-center">
+                            Error!
+                        </h4>
+                        <div>
+                            <h5 className="font-medium">Message:</h5>
+                            <p className="px-4 break-all">{error.message}</p>
+                        </div>
+                        <div>
+                            <h5 className="font-medium">Errors:</h5>
+                            <p className="px-4 break-all">{error.errorArr}</p>
+                        </div>
                     </div>
                 )}
             </div>
