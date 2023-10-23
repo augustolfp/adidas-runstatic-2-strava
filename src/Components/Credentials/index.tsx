@@ -1,5 +1,5 @@
 import ExplanationText from "./ExplanationText";
-import UserHasNoToken from "./UserHasNoToken";
+import GetCredentials from "./GetCredentials";
 
 export default function Credentials() {
     return (
@@ -7,7 +7,7 @@ export default function Credentials() {
             <div className="card-body">
                 <h2 className="card-title">2. Credentials</h2>
                 <ExplanationText />
-                <UserHasNoToken />
+                <GetCredentials />
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TokenRequestForm from "./TokenRequestForm";
 
-export default function UserHasNoToken() {
+export default function GetCredentials() {
     const [clientId, setClientId] = useState<string>("");
 
     const scopeUrl = import.meta.env.VITE_SCOPE_URL;
