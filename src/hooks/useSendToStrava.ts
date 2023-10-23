@@ -36,7 +36,8 @@ const uploadFile = (file: File, accessToken: string) => {
         params: { ...params },
     });
 
-    response.then((_res) => {
+    response.then((res) => {
+        console.log("Success!", res);
         const result: POST_File_Request = {
             status: "success",
             name: file.name,
@@ -44,7 +45,8 @@ const uploadFile = (file: File, accessToken: string) => {
         setPostFileRequests((prev) => [...prev, result]);
     });
 
-    response.catch((_err) => {
+    response.catch((err) => {
+        console.log("Error!", err);
         const result: POST_File_Request = {
             status: "fail",
             name: file.name,
