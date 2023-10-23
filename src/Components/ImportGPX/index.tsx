@@ -1,4 +1,6 @@
 import ImportCardLayout from "../ImportCardLayout";
+import FilesList from "../FilesList";
+
 interface Props {
     gpxList: File[];
     handleGpxInput: (e: React.FormEvent<HTMLInputElement>) => void;
@@ -30,20 +32,7 @@ export default function ImportGPX({ gpxList, handleGpxInput }: Props) {
 
             <div className="divider divider-horizontal"></div>
 
-            <div className="flex flex-col gap-2 w-1/2">
-                <h3 className="font-medium text-base-content">
-                    {gpxList.length} selected files:
-                </h3>
-                <div className="bg-base-200 p-2 rounded-lg">
-                    <ul className="h-32 overflow-y-scroll">
-                        {gpxList.map((file, index) => (
-                            <li key={index} className="text-xs">
-                                {file.name}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
+            <FilesList list={gpxList.map((file) => file.name)} />
         </ImportCardLayout>
     );
 }
