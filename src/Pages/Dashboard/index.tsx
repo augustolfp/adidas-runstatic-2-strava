@@ -9,6 +9,8 @@ import StatusPanel from "../../Components/StatusPanel";
 
 import PageContainer from "../../Components/PageContainer";
 
+import SanityCheck from "../../Components/StatusPanel/SanityCheck";
+
 export default function Dashboard() {
     const [accessToken, setAccessToken] = useState<string>("");
     const { gpxList, handleGpxInput } = useGetGPX();
@@ -30,7 +32,12 @@ export default function Dashboard() {
                 handleInput={handleAccessToken}
             />
 
-            <StatusPanel disabled={false} loading={false} />
+            <StatusPanel disabled={false} loading={false}>
+                <SanityCheck
+                    hasAccessToken={Boolean(accessToken)}
+                    hasGpxFiles={Boolean(gpxList.length)}
+                />
+            </StatusPanel>
         </PageContainer>
     );
 }
