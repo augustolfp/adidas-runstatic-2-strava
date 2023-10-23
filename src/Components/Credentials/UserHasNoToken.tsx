@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TokenRequestForm from "./TokenRequestForm";
 
 export default function UserHasNoToken() {
     const [clientId, setClientId] = useState<string>("");
@@ -36,6 +37,16 @@ export default function UserHasNoToken() {
                             {completeUrl}
                         </a>
                     </div>
+                </li>
+
+                <div className="divider divider-vertical"></div>
+
+                <li>
+                    You received a <span className="italic">code</span> at the
+                    previus step. Now when can use it to request an Access Token
+                    that will give us the desired permissions. Fill this form
+                    and submit:
+                    <TokenRequestForm />
                 </li>
             </ol>
         </div>
