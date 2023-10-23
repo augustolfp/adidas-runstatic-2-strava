@@ -5,6 +5,8 @@ import ImportGPX from "../../Components/ImportGPX";
 
 import Credentials from "../../Components/Credentials";
 
+import InsertAccessToken from "../../Components/InsertAccessToken";
+
 import StatusPanel from "../../Components/StatusPanel";
 
 import PageContainer from "../../Components/PageContainer";
@@ -28,6 +30,11 @@ export default function Dashboard() {
             <ImportGPX gpxList={gpxList} handleGpxInput={handleGpxInput} />
 
             <Credentials
+                accessToken={accessToken}
+                handleInput={handleAccessToken}
+            />
+
+            <InsertAccessToken
                 accessToken={accessToken}
                 handleInput={handleAccessToken}
             />
