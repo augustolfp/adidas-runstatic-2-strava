@@ -27,14 +27,14 @@ export default function Dashboard() {
                 Adidas Runstatic 2 Strava
             </h1>
 
-            <ImportGPX gpxList={gpxList} handleGpxInput={handleGpxInput} />
-
             <Credentials />
 
             <InsertAccessToken
                 accessToken={accessToken}
                 handleInput={handleAccessToken}
             />
+
+            <ImportGPX gpxList={gpxList} handleGpxInput={handleGpxInput} />
 
             <StatusPanel disabled={false} loading={false}>
                 <SanityCheck

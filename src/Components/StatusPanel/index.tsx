@@ -8,7 +8,7 @@ export default function StatusPanel({ disabled, loading, children }: Props) {
     return (
         <div className="card w-full bg-base-100 shadow-xl">
             <div className="card-body h-72">
-                <h2 className="card-title">3. Send to Strava!</h2>
+                <h2 className="card-title">4. Send to Strava!</h2>
                 <div className="w-full grid grid-cols-[1fr_2fr_2fr] gap-4">
                     <div className="flex flex-col gap-2 justify-end">
                         {children}

@@ -8,7 +8,7 @@ interface Props {
 
 export default function ImportGPX({ gpxList, handleGpxInput }: Props) {
     return (
-        <ImportCardLayout title="1. GPX Files">
+        <ImportCardLayout title="3. GPX Files">
             <div className="flex flex-col gap-2 w-5/12">
                 <p>
                     Upload <strong>.gpx</strong> files received from

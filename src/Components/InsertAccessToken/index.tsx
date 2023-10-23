@@ -7,7 +7,7 @@ export default function InsertAccessToken({ accessToken, handleInput }: Props) {
     return (
         <div className="card w-full bg-base-100 shadow-xl">
             <div className="card-body">
-                <h2 className="card-title">3. Access Token</h2>
+                <h2 className="card-title">2. Access Token</h2>
                 <div className="flex items-center gap-4">
                     <h4 className="font-medium text-base-content">
                         Paste Access Token here!
