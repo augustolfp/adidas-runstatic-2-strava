@@ -1,10 +1,14 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./Pages/Dashboard";
 import "./App.css";
 
 function App() {
     return (
-        <h1 className="text-3xl font-bold underline bg-base-300">
-            Hello world!
-        </h1>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Dashboard />} />
+            </Routes>
+        </Router>
     );
 }
 
