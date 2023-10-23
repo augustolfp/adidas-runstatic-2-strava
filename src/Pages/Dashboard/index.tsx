@@ -29,10 +29,7 @@ export default function Dashboard() {
 
             <ImportGPX gpxList={gpxList} handleGpxInput={handleGpxInput} />
 
-            <Credentials
-                accessToken={accessToken}
-                handleInput={handleAccessToken}
-            />
+            <Credentials />
 
             <InsertAccessToken
                 accessToken={accessToken}
