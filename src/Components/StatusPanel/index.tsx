@@ -29,39 +29,44 @@ export default function StatusPanel({ gpxList, accessToken }: Props) {
                             Send!
                         </button>
                     </div>
-
-                    <div className="w-full">
-                        <h3 className="font-medium text-base-content">
-                            Results:
-                        </h3>
-                        <div className="bg-base-200 p-2 rounded-lg">
-                            <ul className="p-2">
-                                {results.map((result, index) => (
-                                    <li
-                                        key={index}
-                                        className={`flex justify-between gap-4 text-xs py-1 px-2 rounded-md ${
-                                            index % 2 === 0
-                                                ? "bg-base-300"
-                                                : "bg-base-200"
-                                        }`}
-                                    >
-                                        {result.name}
-                                        <div
-                                            className={`badge ${
-                                                result.status === "success"
-                                                    ? "badge-success"
-                                                    : "badge-error"
+                    {results.length > 0 && (
+                        <div className="w-full">
+                            <h3 className="font-medium text-base-content">
+                                Results:
+                            </h3>
+                            <div className="bg-base-200 p-2 rounded-lg">
+                                <ul className="p-2">
+                                    {results.map((result, index) => (
+                                        <li
+                                            key={index}
+                                            className={`flex justify-between gap-4 text-xs py-1 px-2 rounded-md ${
+                                                index % 2 === 0
+                                                    ? "bg-base-300"
+                                                    : "bg-base-200"
                                             }`}
                                         >
-                                            {result.status === "success"
-                                                ? "Success"
-                                                : "Error"}
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
+                                            {result.name}
+                                            <div
+                                                className={`badge ${
+                                                    result.status === "success"
+                                                        ? "badge-success"
+                                                        : "badge-error"
+                                                }`}
+                                            >
+                                                {result.status === "success"
+                                                    ? "Success"
+                                                    : "Error"}
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <p className="text-xs text-secondary text-right">
+                                To see result details, open you Browser
+                                Developer tools and check the logs!
+                            </p>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </div>
