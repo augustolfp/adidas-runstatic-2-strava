@@ -1,8 +1,19 @@
+import { useState } from "react";
+
 import useGetGPX from "../../hooks/useGetGPX";
 import ImportGPX from "../../Components/ImportGPX";
+
+import Credentials from "../../Components/Credentials";
+
 import PageContainer from "../../Components/PageContainer";
+
 export default function Dashboard() {
+    const [accessToken, setAccessToken] = useState<string>("");
     const { gpxList, handleGpxInput } = useGetGPX();
+
+    const handleAccessToken = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setAccessToken(e.target.value);
+    };
 
     return (
         <PageContainer>
@@ -10,6 +21,10 @@ export default function Dashboard() {
                 Adidas Runstatic 2 Strava
             </h1>
             <ImportGPX gpxList={gpxList} handleGpxInput={handleGpxInput} />
+            <Credentials
+                accessToken={accessToken}
+                handleInput={handleAccessToken}
+            />
         </PageContainer>
     );
 }
