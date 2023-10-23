@@ -5,6 +5,8 @@ import ImportGPX from "../../Components/ImportGPX";
 
 import Credentials from "../../Components/Credentials";
 
+import StatusPanel from "../../Components/StatusPanel";
+
 import PageContainer from "../../Components/PageContainer";
 
 export default function Dashboard() {
@@ -20,11 +22,15 @@ export default function Dashboard() {
             <h1 className="text-3xl text-base-content font-medium">
                 Adidas Runstatic 2 Strava
             </h1>
+
             <ImportGPX gpxList={gpxList} handleGpxInput={handleGpxInput} />
+
             <Credentials
                 accessToken={accessToken}
                 handleInput={handleAccessToken}
             />
+
+            <StatusPanel disabled={false} loading={false} />
         </PageContainer>
     );
 }

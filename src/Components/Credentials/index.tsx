@@ -6,7 +6,7 @@ interface Props {
 export default function Credentials({ accessToken, handleInput }: Props) {
     return (
         <div className="card w-full bg-base-100 shadow-xl">
-            <div className="card-body h-72">
+            <div className="card-body">
                 <h2 className="card-title">2. Credentials</h2>
                 <div className="flex w-full">
                     <input
