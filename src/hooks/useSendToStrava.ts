@@ -7,6 +7,7 @@ type POST_File_Request = {
 };
 
 export default function useSendToStrava() {
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     const [postFileRequests, setPostFileRequests] = useState<
     POST_File_Request[]
 >([]);
@@ -53,14 +54,22 @@ const uploadFile = (file: File, accessToken: string) => {
         };
         setPostFileRequests((prev) => [...prev, result]);
     });
+
+    return response
 };
 
 const batchUpload = (gpxList: File[], accessToken: string) => {
-    gpxList.map((file) => uploadFile(file, accessToken));
+    setIsLoading(true)
+    const requests = gpxList.map((file) => uploadFile(file, accessToken));
+
+    Promise.allSettled(requests).finally(() => {
+        setIsLoading(false)
+    })
 } 
 
 return {
     batchUpload,
-    results: postFileRequests
+    results: postFileRequests,
+    isLoading
 }
 }

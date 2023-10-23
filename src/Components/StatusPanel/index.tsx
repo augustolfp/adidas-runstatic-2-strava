@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function StatusPanel({ gpxList, accessToken }: Props) {
-    const { batchUpload, results } = useSendToStrava();
+    const { batchUpload, results, isLoading } = useSendToStrava();
     const handleUpload = () => {
         batchUpload(gpxList, accessToken);
     };
@@ -25,8 +25,13 @@ export default function StatusPanel({ gpxList, accessToken }: Props) {
                         <button
                             onClick={handleUpload}
                             className="btn btn-primary"
+                            disabled={
+                                isLoading ||
+                                gpxList.length === 0 ||
+                                accessToken.length === 0
+                            }
                         >
-                            Send!
+                            {isLoading ? "Loading..." : "Send!"}
                         </button>
                     </div>
                     {results.length > 0 && (
