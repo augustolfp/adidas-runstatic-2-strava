@@ -1,10 +1,8 @@
-import ImportGPX from "../../Components/ImportGPX";
-
 import Credentials from "../../Components/Credentials";
 
-import StatusPanel from "../../Components/StatusPanel";
-
 import PageContainer from "../../Components/PageContainer";
+
+import Uploader from "../../Components/Uploader";
 
 export default function Dashboard() {
     return (
@@ -20,11 +18,8 @@ export default function Dashboard() {
 
             <div>
                 <h2 className="text-xl font-semibold">2. Send to Strava</h2>
+                <Uploader />
             </div>
-
-            <ImportGPX />
-
-            <StatusPanel />
         </PageContainer>
     );
 }

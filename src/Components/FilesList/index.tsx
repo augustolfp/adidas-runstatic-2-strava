@@ -1,8 +1,9 @@
-interface Props {
-    list: string[];
-}
+import { useAppContext } from "../../contexts/AppContext";
 
-export default function FilesList({ list }: Props) {
+export default function FilesList() {
+    const { gpxList } = useAppContext();
+    const list = gpxList.map((file) => file.name);
+
     return (
         <div className="flex flex-col gap-2 w-1/2">
             <h3 className="font-medium text-base-content">
