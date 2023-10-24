@@ -14,9 +14,9 @@ export default function GetCredentials() {
 
                 <li>
                     You received a <span className="italic">code</span> at the
-                    previus step. Now when can use it to request an Access Token
-                    that will give us the desired permissions. Fill this form
-                    and submit:
+                    previous step. Now when can use it to request an Access
+                    Token that will give us the desired permissions. Fill this
+                    form and submit:
                     <TokenRequestForm />
                 </li>
             </ol>

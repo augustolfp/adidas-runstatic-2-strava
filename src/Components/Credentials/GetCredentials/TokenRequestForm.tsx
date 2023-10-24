@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import secondsToHoursConverter from "../../../utils/secondsToHoursConverter";
 
 export default function TokenRequestForm() {
     const [clientId, setClientId] = useState<number>();
@@ -166,7 +167,10 @@ export default function TokenRequestForm() {
                         </div>
                         <div className="p-2 bg-base-300 rounded-lg">
                             <h5 className="font-medium">Expires in:</h5>
-                            <p className="px-4 break-all">{result.expiresIn}</p>
+                            <p className="px-4 break-all">
+                                {secondsToHoursConverter(result.expiresIn)}{" "}
+                                <span className="font-light">(HH:mm:ss)</span>
+                            </p>
                         </div>
                     </div>
                 )}
