@@ -1,33 +1,20 @@
+import {
+    type SuccessResponse,
+    type ErrorResponse,
+    type Status,
+    type AuthRequestParams,
+} from "../types";
 import { useState } from "react";
 import axios from "axios";
-
-export interface AuthParams {
-    client_id: number;
-    client_secret: string;
-    code: string;
-}
-
-type SuccessResponse = {
-    accessToken: string;
-    athleteName: string;
-    expiresIn: number;
-};
-
-type ErrorResponse = {
-    message: string;
-    errorArr: string;
-};
 
 export default function useAuth() {
     const baseURL = import.meta.env.VITE_TOKEN_REQUEST_URL;
 
-    const [status, setStatus] = useState<
-        "loading" | "success" | "error" | "idle"
-    >("idle");
+    const [status, setStatus] = useState<Status>("idle");
     const [error, setError] = useState<ErrorResponse | null>(null);
     const [result, setResult] = useState<SuccessResponse | null>(null);
 
-    const getAuth = (paramsObj: AuthParams) => {
+    const getAuth = (paramsObj: AuthRequestParams) => {
         setStatus("loading");
 
         const response = axios.post(baseURL, null, {

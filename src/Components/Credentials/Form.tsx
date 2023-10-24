@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { AuthParams } from "../../hooks/useAuth";
+import { type AuthRequestParams } from "../../types";
 
 interface Props {
-    onSubmit: (paramsObj: AuthParams) => void;
+    onSubmit: (paramsObj: AuthRequestParams) => void;
     status: "loading" | "success" | "error" | "idle";
 }
 

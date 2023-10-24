@@ -1,18 +1,12 @@
 import secondsToHoursConverter from "../../utils/secondsToHoursConverter";
-
-type SuccessResponse = {
-    accessToken: string;
-    athleteName: string;
-    expiresIn: number;
-};
-
-type ErrorResponse = {
-    message: string;
-    errorArr: string;
-};
+import {
+    type SuccessResponse,
+    type ErrorResponse,
+    type Status,
+} from "../../types";
 
 interface Props {
-    status: "loading" | "success" | "error" | "idle";
+    status: Status;
     result: SuccessResponse | null;
     error: ErrorResponse | null;
 }
