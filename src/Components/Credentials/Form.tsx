@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { type AuthRequestParams } from "../../types";
+import GetCode from "./GetCode";
 
 interface Props {
     onSubmit: (paramsObj: AuthRequestParams) => void;
@@ -24,20 +25,8 @@ export default function Form({ onSubmit, status }: Props) {
     };
 
     return (
-        <form
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-2 p-4 bg-base-200 m-4 rounded-xl w-1/2"
-        >
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <div>
-                <h4 className="text-lg font-medium text-base-content text-center">
-                    Access Token Request
-                </h4>
-                <p className="text-sm font-light text-base-content">
-                    Submit this form to receive an Access Token from Strava
-                </p>
-            </div>
-            <div className="divider divider-vertical m-0"></div>
-            <div className="flex flex-col md:flex-row md:justify-between">
                 <label htmlFor="client_id" className="label">
                     <span className="label-text">Client ID:</span>
                 </label>
@@ -45,7 +34,7 @@ export default function Form({ onSubmit, status }: Props) {
                     id="client_id"
                     name="client_id"
                     placeholder="Client ID"
-                    className="input input-bordered input-sm md:input-md"
+                    className="input input-bordered"
                     type="number"
                     disabled={status === "loading"}
                     value={clientId || ""}
@@ -57,7 +46,7 @@ export default function Form({ onSubmit, status }: Props) {
                 />
             </div>
 
-            <div className="flex flex-col md:flex-row md:justify-between">
+            <div>
                 <label htmlFor="client_secret" className="label">
                     <span className="label-text">Client Secret:</span>
                 </label>
@@ -65,7 +54,7 @@ export default function Form({ onSubmit, status }: Props) {
                     id="client_secret"
                     name="client_secret"
                     placeholder="Client Secret"
-                    className="input input-bordered input-sm md:input-md"
+                    className="input input-bordered"
                     type="password"
                     disabled={status === "loading"}
                     value={clientSecret || ""}
@@ -73,28 +62,29 @@ export default function Form({ onSubmit, status }: Props) {
                 />
             </div>
 
-            <div className="flex flex-col md:flex-row md:justify-between">
+            <div>
                 <label htmlFor="code" className="label">
                     <span className="label-text">
-                        Code (from previous step):
+                        One-time use Strava Code:
                     </span>
                 </label>
                 <input
                     id="code"
                     name="code"
                     placeholder="Code"
-                    className="input input-bordered input-sm md:input-md"
+                    className="input input-bordered"
                     type="text"
-                    disabled={status === "loading"}
+                    disabled={status === "loading" || !clientId}
                     value={code || ""}
                     onChange={(e) => setCode(e.target.value)}
                 />
+                <GetCode clientId={clientId} />
             </div>
 
             <button
                 type="submit"
                 disabled={status === "loading"}
-                className="btn btn-primary w-full btn-sm md:btn-md"
+                className="btn btn-primary"
             >
                 {status === "loading" ? "Loading..." : "Send Token request"}
             </button>

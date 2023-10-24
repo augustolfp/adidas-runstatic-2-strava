@@ -1,38 +1,31 @@
-import { useState } from "react";
+interface Props {
+    clientId?: number;
+}
 
-export default function GetCode() {
-    const [clientId, setClientId] = useState<string>("");
-
+export default function GetCode({ clientId }: Props) {
     const scopeUrl = import.meta.env.VITE_SCOPE_URL;
     const redirectUri = import.meta.env.VITE_REDIRECT_URI;
 
     const completeUrl = `${scopeUrl}&redirect_uri=${redirectUri}&client_id=${clientId}`;
 
     return (
-        <>
-            <li>
-                Paste your <span className="italic">Client ID</span> to complete
-                the scope URL:
-                <input
-                    type="text"
-                    placeholder="Client ID"
-                    value={clientId}
-                    onChange={(e) => setClientId(e.target.value)}
-                    className="input input-bordered mx-4"
-                />
-            </li>
-            <div className="divider divider-vertical"></div>
-            <li>
-                Access the scope URL to get a code to generate a token:
-                <div className="py-4 px-6">
-                    <a
-                        href={completeUrl}
-                        className="link link-primary text-sm break-all"
-                    >
-                        {completeUrl}
-                    </a>
-                </div>
-            </li>
-        </>
+        <div>
+            <p className="py-4 px-6">
+                Open{" "}
+                <a
+                    href={completeUrl}
+                    target="_blank"
+                    className="link link-primary text-sm break-all"
+                >
+                    this link
+                </a>{" "}
+                in another tab to get your code.
+            </p>
+            <p className="text-warning text-sm">
+                <strong>PS:</strong> Be sure to properly fill your{" "}
+                <strong>Client ID</strong> field in the form before, otherwise
+                the link won't work!
+            </p>
+        </div>
     );
 }
