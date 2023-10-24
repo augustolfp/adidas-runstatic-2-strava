@@ -1,17 +1,12 @@
 import secondsToHoursConverter from "../../utils/secondsToHoursConverter";
-import {
-    type SuccessResponse,
-    type ErrorResponse,
-    type Status,
-} from "../../types";
+import { type SuccessResponse, type ErrorResponse } from "../../types";
 
 interface Props {
-    status: Status;
     result: SuccessResponse | null;
     error: ErrorResponse | null;
 }
 
-export default function FormResult({ status, result, error }: Props) {
+export default function FormResult({ result, error }: Props) {
     return (
         <div>
             {result && (
