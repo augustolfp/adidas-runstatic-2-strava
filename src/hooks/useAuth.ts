@@ -6,8 +6,10 @@ import {
 } from "../types";
 import { useState } from "react";
 import axios from "axios";
+import { useAppContext } from "../contexts/AppContext";
 
 export default function useAuth() {
+    const { setAccessToken } = useAppContext();
     const baseURL = import.meta.env.VITE_TOKEN_REQUEST_URL;
 
     const [status, setStatus] = useState<Status>("idle");
@@ -27,6 +29,7 @@ export default function useAuth() {
                 athleteName: res.data.athlete.firstName,
                 expiresIn: res.data.expires_in,
             });
+            setAccessToken(res.data.access_token);
             setStatus("success");
         });
 
