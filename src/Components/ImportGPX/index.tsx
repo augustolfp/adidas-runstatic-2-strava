@@ -3,7 +3,7 @@ import { useAppContext } from "../../contexts/AppContext";
 export default function ImportGPX() {
     const { handleGpxInput } = useAppContext();
     return (
-        <div className="bg-purple-200">
+        <div className="flex flex-col w-full">
             <p>
                 Upload <strong>.gpx</strong> files received from
                 <span className="italic">Adidas Runstatic</span>

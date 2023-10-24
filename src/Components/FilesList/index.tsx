@@ -5,7 +5,7 @@ export default function FilesList() {
     const list = gpxList.map((file) => file.name);
 
     return (
-        <div className="flex flex-col gap-2 w-1/2">
+        <div className="w-full">
             <h3 className="font-medium text-base-content">
                 {list.length} selected files:
             </h3>

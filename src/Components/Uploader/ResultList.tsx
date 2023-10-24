@@ -1,26 +1,11 @@
-import useSendToStrava from "../../hooks/useSendToStrava";
-import { useAppContext } from "../../contexts/AppContext";
+import { type POST_File_Request } from "../../hooks/useSendToStrava";
+interface Props {
+    results: POST_File_Request[];
+}
 
-export default function StatusPanel() {
-    const { accessToken, gpxList } = useAppContext();
-    const { batchUpload, results, isLoading } = useSendToStrava();
-    const handleUpload = () => {
-        if (accessToken) {
-            batchUpload(gpxList, accessToken);
-        }
-    };
-
+export default function ResultList({ results }: Props) {
     return (
-        <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-2 justify-end">
-                <button
-                    onClick={handleUpload}
-                    className="btn btn-primary"
-                    disabled={isLoading || gpxList.length === 0 || !accessToken}
-                >
-                    {isLoading ? "Loading..." : "Send!"}
-                </button>
-            </div>
+        <div>
             {results.length > 0 && (
                 <div className="w-full">
                     <h3 className="font-medium text-base-content">Results:</h3>
