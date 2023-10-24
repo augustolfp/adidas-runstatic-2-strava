@@ -18,7 +18,8 @@ This app allows you to upload your logs received from the _Adidas Runstatic_ app
     You should see a list of _.json_ and _.gpx_ files.
 
 3. Access <a href="https://developers.strava.com/">https://developers.strava.com/</a> and click on **Create & Manage Your App**. You will be redirected to a form:
-   ![Alt text](image.png)
+
+    ![Alt text](image.png)
 
 4. You may need to update your App Icon. A kitty picture is not mandatory, but highly recommended:
 
