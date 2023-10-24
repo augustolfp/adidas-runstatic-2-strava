@@ -1,20 +1,24 @@
 import SanityCheck from "./SanityCheck";
 import useSendToStrava from "../../hooks/useSendToStrava";
+import { useAppContext } from "../../contexts/AppContext";
 
 interface Props {
     gpxList: File[];
-    accessToken: string;
 }
 
-export default function StatusPanel({ gpxList, accessToken }: Props) {
+export default function StatusPanel({ gpxList }: Props) {
+    const { accessToken } = useAppContext();
     const { batchUpload, results, isLoading } = useSendToStrava();
     const handleUpload = () => {
-        batchUpload(gpxList, accessToken);
+        if (accessToken) {
+            batchUpload(gpxList, accessToken);
+        }
     };
 
     return (
         <div className="card w-full bg-base-100 shadow-xl">
             <div className="card-body">
+                <div>Access token: {accessToken}</div>
                 <h2 className="card-title">4. Send to Strava!</h2>
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-col gap-2 justify-end">
@@ -28,7 +32,7 @@ export default function StatusPanel({ gpxList, accessToken }: Props) {
                             disabled={
                                 isLoading ||
                                 gpxList.length === 0 ||
-                                accessToken.length === 0
+                                !accessToken
                             }
                         >
                             {isLoading ? "Loading..." : "Send!"}
