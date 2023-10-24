@@ -7,12 +7,9 @@ export default function Credentials() {
     const { status, error, result, getAuth } = useAuth();
 
     return (
-        <div>
-            <h2 className="card-title">1. Credentials</h2>
-            <Card>
-                <Form onSubmit={getAuth} status={status} />
-                <FormResult result={result} error={error} />
-            </Card>
-        </div>
+        <Card>
+            <Form onSubmit={getAuth} status={status} />
+            <FormResult result={result} error={error} />
+        </Card>
     );
 }

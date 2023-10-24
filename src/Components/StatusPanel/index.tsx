@@ -2,12 +2,8 @@ import SanityCheck from "./SanityCheck";
 import useSendToStrava from "../../hooks/useSendToStrava";
 import { useAppContext } from "../../contexts/AppContext";
 
-interface Props {
-    gpxList: File[];
-}
-
-export default function StatusPanel({ gpxList }: Props) {
-    const { accessToken } = useAppContext();
+export default function StatusPanel() {
+    const { accessToken, gpxList } = useAppContext();
     const { batchUpload, results, isLoading } = useSendToStrava();
     const handleUpload = () => {
         if (accessToken) {

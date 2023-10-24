@@ -1,14 +1,10 @@
-import ImportCardLayout from "../ImportCardLayout";
 import FilesList from "../FilesList";
+import { useAppContext } from "../../contexts/AppContext";
 
-interface Props {
-    gpxList: File[];
-    handleGpxInput: (e: React.FormEvent<HTMLInputElement>) => void;
-}
-
-export default function ImportGPX({ gpxList, handleGpxInput }: Props) {
+export default function ImportGPX() {
+    const { gpxList, handleGpxInput } = useAppContext();
     return (
-        <ImportCardLayout title="3. GPX Files">
+        <div>
             <div className="flex flex-col gap-2 w-5/12">
                 <p>
                     Upload <strong>.gpx</strong> files received from
@@ -33,6 +29,6 @@ export default function ImportGPX({ gpxList, handleGpxInput }: Props) {
             <div className="divider divider-horizontal"></div>
 
             <FilesList list={gpxList.map((file) => file.name)} />
-        </ImportCardLayout>
+        </div>
     );
 }
