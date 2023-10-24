@@ -1,63 +1,24 @@
 import { useState } from "react";
-import axios from "axios";
 import secondsToHoursConverter from "../../../utils/secondsToHoursConverter";
+import useAuth from "../../../hooks/useAuth";
 
 export default function TokenRequestForm() {
     const [clientId, setClientId] = useState<number>();
     const [clientSecret, setClientSecret] = useState<string>("");
     const [code, setCode] = useState<string>("");
-    const [status, setStatus] = useState<
-        "loading" | "success" | "error" | "idle"
-    >("idle");
-    const [error, setError] = useState({
-        message: "",
-        errorArr: "",
-    });
-    const [result, setResult] = useState({
-        accessToken: "",
-        athleteName: "",
-        expiresIn: 0,
-    });
 
-    const baseURL = import.meta.env.VITE_TOKEN_REQUEST_URL;
+    const { status, error, result, getAuth } = useAuth();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setStatus("loading");
 
-        const response = axios.post(baseURL, null, {
-            params: {
-                client_id: clientId,
-                client_secret: clientSecret,
-                code: code,
-            },
-        });
+        const params = {
+            client_id: clientId ?? 0,
+            client_secret: clientSecret,
+            code: code,
+        };
 
-        response.then((res) => {
-            setStatus("success");
-            console.log("Success!", res);
-            setResult({
-                accessToken: res.data.access_token,
-                athleteName: res.data.athlete.firstname,
-                expiresIn: res.data.expires_in,
-            });
-        });
-        response.catch((err) => {
-            setStatus("error");
-            console.log("Error!", err);
-            let message = "Unknown error";
-            let errArr = "";
-            if (typeof err.message === "string") {
-                message = err.message;
-            }
-            if (err.response.data) {
-                errArr = JSON.stringify(err.response.data);
-            }
-            setError({
-                message: message,
-                errorArr: errArr,
-            });
-        });
+        getAuth(params);
     };
 
     return (
@@ -137,6 +98,7 @@ export default function TokenRequestForm() {
                     {status === "loading" ? "Loading..." : "Send Token request"}
                 </button>
             </form>
+
             <div className="flex flex-col p-4 bg-base-200 m-4 rounded-xl w-1/2">
                 <div>
                     <h4 className="text-lg font-medium text-base-content text-center">
@@ -148,7 +110,7 @@ export default function TokenRequestForm() {
                     </p>
                 </div>
                 <div className="divider divider-vertical m-0"></div>
-                {status === "success" && (
+                {result && (
                     <div className="flex flex-col gap-2">
                         <h4 className="text-success font-medium text-center">
                             Success!
@@ -174,7 +136,7 @@ export default function TokenRequestForm() {
                         </div>
                     </div>
                 )}
-                {status === "error" && (
+                {error && (
                     <div>
                         <h4 className="text-error font-medium text-center">
                             Error!
