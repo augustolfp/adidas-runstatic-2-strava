@@ -1,4 +1,4 @@
-import secondsToHoursConverter from "../../../utils/secondsToHoursConverter";
+import secondsToHoursConverter from "../../utils/secondsToHoursConverter";
 
 type SuccessResponse = {
     accessToken: string;

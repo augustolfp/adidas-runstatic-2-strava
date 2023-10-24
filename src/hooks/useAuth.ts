@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-interface AuthParams {
+export interface AuthParams {
     client_id: number;
     client_secret: string;
     code: string;
