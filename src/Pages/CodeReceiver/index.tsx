@@ -1,4 +1,4 @@
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import PageContainer from "../../Components/PageContainer";
 
@@ -44,14 +44,8 @@ export default function CodeReceiver() {
                             </div>
                         </div>
                         <p className="font-medium">
-                            PS: This is a short-lived code. Go back to the{" "}
-                            <Link
-                                to="/"
-                                className="link link-primary text-sm break-all"
-                            >
-                                Website Main Page
-                            </Link>{" "}
-                            and follow the next steps!
+                            PS: This is a short-lived code. Copy it, close this
+                            page and go back to the form!
                         </p>
                     </div>
                 ) : (

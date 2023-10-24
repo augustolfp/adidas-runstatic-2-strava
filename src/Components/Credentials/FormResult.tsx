@@ -16,20 +16,20 @@ export default function FormResult({ result, error }: Props) {
                     </h4>
                     <div className="w-1/2">
                         <h5 className="text-lg font-medium">Received data</h5>
-                        <ul className="list-inside list-disc bg-neutral-content py-2 px-4 rounded-xl text-neutral font-semibold">
-                            <li>
+                        <ul className="list-inside list-disc bg-base-300 p-3 rounded-xl font-semibold">
+                            <li className="text-xs p-2 rounded-md bg-base-200 mb-1">
                                 Athlete name:
                                 <p className="pl-8 pr-4 break-all font-normal">
                                     {result.athleteName}
                                 </p>
                             </li>
-                            <li>
+                            <li className="text-xs p-2 rounded-md bg-base-200 mb-1">
                                 Access Token:
                                 <p className="pl-8 pr-4 break-all font-normal">
                                     {result.accessToken}
                                 </p>
                             </li>
-                            <li>
+                            <li className="text-xs p-2 rounded-md bg-base-200">
                                 Expires in:
                                 <p className="pl-8 pr-4 break-all font-normal">
                                     {secondsToHoursConverter(result.expiresIn)}{" "}
