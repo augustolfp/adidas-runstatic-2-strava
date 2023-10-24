@@ -1,7 +1,7 @@
 import Card from "../Card";
 import ImportGPX from "../ImportGPX";
 import FilesList from "../FilesList";
-import ResultList from "./ResultList";
+import UploadResultList from "../UploadResultList";
 
 import useSendToStrava from "../../hooks/useSendToStrava";
 import { useAppContext } from "../../contexts/AppContext";
@@ -30,7 +30,7 @@ export default function Uploader() {
                 {isLoading ? "Loading..." : "Send!"}
             </button>
 
-            <ResultList results={results} />
+            <UploadResultList results={results} />
         </Card>
     );
 }
