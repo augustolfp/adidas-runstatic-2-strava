@@ -10,7 +10,7 @@ export default function GetCode({ clientId }: Props) {
 
     return (
         <div>
-            <p className="py-4 px-6">
+            <p className="text-sm font-medium">
                 Open{" "}
                 <a
                     href={completeUrl}
@@ -23,8 +23,8 @@ export default function GetCode({ clientId }: Props) {
             </p>
             <p className="text-warning text-sm">
                 <strong>PS:</strong> Be sure to properly fill your{" "}
-                <strong>Client ID</strong> field in the form before, otherwise
-                the link won't work!
+                <strong>Client ID</strong> field before, otherwise the link
+                won't work!
             </p>
         </div>
     );

@@ -26,7 +26,7 @@ export default function Form({ onSubmit, status }: Props) {
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-            <div>
+            <div className="w-full">
                 <label htmlFor="client_id" className="label">
                     <span className="label-text">Client ID:</span>
                 </label>
@@ -34,7 +34,7 @@ export default function Form({ onSubmit, status }: Props) {
                     id="client_id"
                     name="client_id"
                     placeholder="Client ID"
-                    className="input input-bordered"
+                    className="input input-bordered w-full"
                     type="number"
                     disabled={status === "loading"}
                     value={clientId || ""}
@@ -46,7 +46,7 @@ export default function Form({ onSubmit, status }: Props) {
                 />
             </div>
 
-            <div>
+            <div className="w-full">
                 <label htmlFor="client_secret" className="label">
                     <span className="label-text">Client Secret:</span>
                 </label>
@@ -54,7 +54,7 @@ export default function Form({ onSubmit, status }: Props) {
                     id="client_secret"
                     name="client_secret"
                     placeholder="Client Secret"
-                    className="input input-bordered"
+                    className="input input-bordered w-full"
                     type="password"
                     disabled={status === "loading"}
                     value={clientSecret || ""}
@@ -62,23 +62,25 @@ export default function Form({ onSubmit, status }: Props) {
                 />
             </div>
 
-            <div>
+            <div className="w-full">
                 <label htmlFor="code" className="label">
                     <span className="label-text">
                         One-time use Strava Code:
                     </span>
                 </label>
-                <input
-                    id="code"
-                    name="code"
-                    placeholder="Code"
-                    className="input input-bordered"
-                    type="text"
-                    disabled={status === "loading" || !clientId}
-                    value={code || ""}
-                    onChange={(e) => setCode(e.target.value)}
-                />
-                <GetCode clientId={clientId} />
+                <div className="flex gap-2">
+                    <input
+                        id="code"
+                        name="code"
+                        placeholder="Code"
+                        className="input input-bordered w-1/2"
+                        type="text"
+                        disabled={status === "loading"}
+                        value={code || ""}
+                        onChange={(e) => setCode(e.target.value)}
+                    />
+                    <GetCode clientId={clientId} />
+                </div>
             </div>
 
             <button
