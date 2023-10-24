@@ -37,8 +37,7 @@ export default function useSendToStrava() {
             params: { ...params },
         });
 
-        response.then((res) => {
-            console.log("Success!", res);
+        response.then((_res) => {
             const result: POST_File_Request = {
                 status: "success",
                 name: file.name,
