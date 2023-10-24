@@ -6,7 +6,7 @@ interface Props {
     status: "loading" | "success" | "error" | "idle";
 }
 
-export default function TokenRequestForm({ onSubmit, status }: Props) {
+export default function Form({ onSubmit, status }: Props) {
     const [clientId, setClientId] = useState<number>();
     const [clientSecret, setClientSecret] = useState<string>("");
     const [code, setCode] = useState<string>("");

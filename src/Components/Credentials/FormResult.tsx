@@ -17,7 +17,7 @@ interface Props {
     error: ErrorResponse | null;
 }
 
-export default function AuthResultPanel({ status, result, error }: Props) {
+export default function FormResult({ status, result, error }: Props) {
     return (
         <div className="flex flex-col p-4 bg-base-200 m-4 rounded-xl w-1/2">
             <div>
