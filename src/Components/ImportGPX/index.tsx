@@ -9,8 +9,8 @@ export default function ImportGPX() {
                 <span className="italic">Adidas Runstatic</span>
                 Platform:
             </p>
-            <label htmlFor="GPX-files" className="text-error">
-                Select only <strong>.gpx</strong> files!
+            <label htmlFor="GPX-files" className="text-warning text-sm">
+                <strong>PS:</strong> Select only <strong>.gpx</strong> files!
             </label>
             <input
                 id="GPX-files"
