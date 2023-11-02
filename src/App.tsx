@@ -4,14 +4,16 @@ import Dashboard from "./Pages/Dashboard";
 import CodeReceiver from "./Pages/CodeReceiver";
 import Footer from "./Components/Footer";
 import Instructions from "./Pages/Instructions";
+import Navbar from "./Components/Navbar";
 import "./App.css";
 
 function App() {
     return (
         <Router>
             <AppProvider>
+                <Navbar />
                 <Routes>
-                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/upload-tool" element={<Dashboard />} />
                     <Route path="/instructions" element={<Instructions />} />
                     <Route path="/code" element={<CodeReceiver />} />
                 </Routes>
