@@ -3,12 +3,10 @@ import fileTree from "./fileTree.md";
 
 export default function Instructions() {
     return (
-        <div className="mockup-code max-w-3xl text-xs">
-            <pre>
-                <code>
-                    <ReactMarkdown children={fileTree} />
-                </code>
-            </pre>
+        <div className="container mx-auto max-w-5xl p-8">
+            <div className="prose max-w-none">
+                <ReactMarkdown children={fileTree} />
+            </div>
         </div>
     );
 }
