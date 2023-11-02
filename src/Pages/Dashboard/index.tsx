@@ -7,8 +7,8 @@ import Uploader from "../../Components/Uploader";
 export default function Dashboard() {
     return (
         <PageContainer>
-            <h1 className="text-3xl text-base-content font-medium">
-                Adidas Runstatic 2 Strava
+            <h1 className="text-4xl text-base-content font-extrabold">
+                Upload tool
             </h1>
 
             <div>
