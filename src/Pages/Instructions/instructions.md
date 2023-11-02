@@ -166,3 +166,27 @@ Now you have an Access token with the required permissions to Upload the files:
 </p>
 
 Do not close the page, just go the the next section!
+
+<br/>
+
+## 4. Upload your files to Strava
+
+With your data in hand, API configured and Access Token generated, it's time to upload your **.gpx** files to strava. Select your files and click in **SEND**:
+
+**Don't forget: there is a Rate limit of 200 requests every 15 minutes, and 2000 requests daily. Select only a maximum of 200 files every each 15 minutes!**
+
+<p align="center">
+<img src="https://i.imgur.com/BWE3tWI.png" alt="GPX files selector" title="GPX files selector" />
+</p>
+
+<br/>
+
+You should see the list of results, and its statuses:
+
+<p align="center">
+<img src="https://i.imgur.com/ujCYdQ9.png" alt="Successful Upload" title="Successful Upload" />
+</p>
+
+<br/>
+
+That's it! Check your Strava account on your phone or PC, and you will see all your Upload sessions!
