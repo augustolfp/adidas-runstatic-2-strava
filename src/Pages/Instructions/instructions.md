@@ -1,7 +1,27 @@
-# Instructions
+# Getting Started
+
+In this page you will find instructions on how to move your running data from adidas runstatic into the strava app.
+
+Without further ado, let's go to the instructions!
+
+---
+
+## 1. Request you Data from Adidas
+
+Go to the [Adidas Runstatic](https://www.runtastic.com/) webpage, Login into your account, and ask for a data export. It may take some days, but you will receive an e-mail telling your Data is ready for download.
+
+Once you've received the email, access their platform and download the compressed file:
+
+<p align="center">
+<img src="https://i.imgur.com/BgDP4sP.png" alt="Adidas dashboard for Data download" title="Adidas dashboard for Data download" />
+</p>
+
+<br/>
+
+Now, extract the compressed file. You should find the following directory tree:
 
 ```bash
-└── adidasData
+└── receivedFile
     ├── Challenges
     │   ├── Collaboration_challenge
     │   │   └── 384f615e-6f4d-4622-bbb9-b351f1160981.json
@@ -60,6 +80,18 @@
         └── 3d192b11-ad0c-46a4-9ef3-aec00fa72882.zip
 
 ```
+
+<br/>
+
+As you can see from the directory tree, there is a lot of info in this compressed file. But for this tutorial, you will only need the GPS Data acquired from your Sport sessions. It's a list of **.gpx** files, found in the path below:
+
+```bash
+> receivedFile/Sport-sessions/GPS-data/
+```
+
+## 2. Create your Strava API
+
+With your data already in hand, now it's time to configure your connection with the Strava API!
 
 <p align="center">
 <img src="https://i.imgur.com/NVUshST.png" width="500" />
