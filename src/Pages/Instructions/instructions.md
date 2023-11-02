@@ -129,7 +129,7 @@ Now you have a credentials panel, with all the necessary data to proceed with th
 
 ## 3. Get Authorization
 
-Go to the [Adidas Runstatic 2 Strava tool page](https://adidas-runstatic-2-strava.vercel.app/), and fill the form with your **Client ID** and **Client Secret** (obtained from the last step), and click on the link to get your code:
+Go to the [Adidas Runstatic 2 Strava tool page](https://adidas-runstatic-2-strava.vercel.app/upload-tool), and fill the form with your **Client ID** and **Client Secret** (obtained from the last step), and click on the link to get your code:
 
 <p align="center">
 <img src="https://i.imgur.com/16dM2tf.png" alt="Import tool credentials forms" title="Import tool credentials form" />
