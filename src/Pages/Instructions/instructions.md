@@ -93,18 +93,32 @@ As you can see from the directory tree, there is a lot of info in this compresse
 
 With your data already in hand, now it's time to configure your connection with the Strava API!
 
+Go to the [Strava developers page](https://developers.strava.com/) and click on **Create & Manage Your App**. You will be redirected to a form. Fill this form with the following parameters, and click on **Create**:
+
+**Make sure to fill the _Authorization Callback Domain_ exactly as shown in the picture below:**
+
 <p align="center">
-<img src="https://i.imgur.com/NVUshST.png" width="500" />
+<img src="https://i.imgur.com/NVUshST.png" alt="API creation form" title="API creation form" />
+</p>
+
+<br/>
+
+You will be prompted to Upload an App Icon for your API. Any picture will work:
+
+<p align="center">
+<img src="https://i.imgur.com/Daj3xZO.png" alt="Upload API icon" title="Upload API icon" />
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/Daj3xZO.png" width="500" />
+<img src="https://i.imgur.com/eyxzIo0.png" alt="I chose a kitty as my API icon" title="I chose a kitty as my API icon" />
 </p>
 
-<p align="center">
-<img src="https://i.imgur.com/eyxzIo0.png" width="500" />
-</p>
+<br/>
+
+Now you have a credentials panel, with all the necessary data to proceed with the Data import:
+
+**As you can see on your API panel, there is a Rate limit of 200 requests every 15 minutes, and 2000 requests daily:**
 
 <p align="center">
-<img src="https://i.imgur.com/xxULDbB.png" width="500" />
+<img src="https://i.imgur.com/xxULDbB.png" alt="API Application panel" title="API Application panel" />
 </p>
