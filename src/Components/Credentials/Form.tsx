@@ -85,7 +85,12 @@ export default function Form({ onSubmit, status }: Props) {
 
             <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={
+                    status === "loading" ||
+                    code === "" ||
+                    clientSecret === "" ||
+                    clientId === undefined
+                }
                 className="btn btn-primary"
             >
                 {status === "loading" ? "Loading..." : "Send Token request"}

@@ -89,6 +89,8 @@ As you can see from the directory tree, there is a lot of info in this compresse
 > receivedFile/Sport-sessions/GPS-data/
 ```
 
+<br/>
+
 ## 2. Create your Strava API
 
 With your data already in hand, now it's time to configure your connection with the Strava API!
@@ -122,3 +124,45 @@ Now you have a credentials panel, with all the necessary data to proceed with th
 <p align="center">
 <img src="https://i.imgur.com/xxULDbB.png" alt="API Application panel" title="API Application panel" />
 </p>
+
+<br/>
+
+## 3. Get Authorization
+
+Go to the [Adidas Runstatic 2 Strava tool page](https://adidas-runstatic-2-strava.vercel.app/), and fill the form with your **Client ID** and **Client Secret** (obtained from the last step), and click on the link to get your code:
+
+<p align="center">
+<img src="https://i.imgur.com/16dM2tf.png" alt="Import tool credentials forms" title="Import tool credentials form" />
+</p>
+
+<br/>
+
+The Strava service will ask for your authorization. Click in _Authorize_:
+
+<p align="center">
+<img src="https://i.imgur.com/ZYCO4aE.png" alt="Authorization page" title="Authorization page" />
+</p>
+
+<br/>
+
+You will be redirected to a page containing the One-time use Strava Code:
+
+<p align="center">
+<img src="https://i.imgur.com/CYEeLkH.png" alt="One-time use Code" title="One-time use Code" />
+</p>
+
+Copy the code, go back to the main page, and paste it on its field. Now click in **SEND TOKEN REQUEST**:
+
+<p align="center">
+<img src="https://i.imgur.com/Jm7gy3L.png" alt="Token Request form properly filled" title="Token Request form properly filled" />
+</p>
+
+<br/>
+
+Now you have an Access token with the required permissions to Upload the files:
+
+<p align="center">
+<img src="https://i.imgur.com/sKEsh76.png" alt="Access Token fully generated" title="Access Token fully generated" />
+</p>
+
+Do not close the page, just go the the next section!
