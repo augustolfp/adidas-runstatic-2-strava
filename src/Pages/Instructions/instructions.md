@@ -6,7 +6,7 @@ Without further ado, let's go to the instructions!
 
 ---
 
-## 1. Request you Data from Adidas
+## 1. Request your Data from Adidas
 
 Go to the [Adidas Runstatic](https://www.runtastic.com/) webpage, Login into your account, and ask for a data export. It may take some days, but you will receive an e-mail telling your Data is ready for download.
 
