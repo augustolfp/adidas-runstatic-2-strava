@@ -2,6 +2,8 @@
 
 In this page you will find instructions on how to move your running data from adidas runstatic into the strava app.
 
+If you prefer, you can follow this [video tutorial](https://drive.google.com/file/d/1wEhIj0BFXc_ltjJHt4d3FFH-pJ43H-h_/view?usp=sharing).
+
 Without further ado, let's go to the instructions!
 
 ---
