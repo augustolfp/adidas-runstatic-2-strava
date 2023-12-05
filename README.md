@@ -14,6 +14,8 @@ This app allows you to upload your logs received from the _Adidas Runstatic_ app
 
 Just follow this <a href="https://adidas-runstatic-2-strava.vercel.app/instructions">step-by-step guide!</a>
 
+You can follow this <a href="https://drive.google.com/file/d/1wEhIj0BFXc_ltjJHt4d3FFH-pJ43H-h_/view?usp=sharing">video tutorial</a> if you prefer!
+
 <br />
 
 # Tools used in this project
