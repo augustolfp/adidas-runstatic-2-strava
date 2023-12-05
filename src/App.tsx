@@ -13,8 +13,9 @@ function App() {
             <AppProvider>
                 <Navbar />
                 <Routes>
-                    <Route path="/upload-tool" element={<Dashboard />} />
+                    <Route path="/" element={<Instructions />} />
                     <Route path="/instructions" element={<Instructions />} />
+                    <Route path="/upload-tool" element={<Dashboard />} />
                     <Route path="/code" element={<CodeReceiver />} />
                 </Routes>
                 <Footer />
