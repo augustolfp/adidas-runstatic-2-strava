@@ -8,27 +8,21 @@ This app allows you to upload your logs received from the _Adidas Runstatic_ app
 
 <a href="https://adidas-runstatic-2-strava.vercel.app/" ><strong>Access the app here!</strong></a>
 
+<br />
+
 # Instructions
 
-1. Go to the **Adidas Runstatic** webpage, Login into your account, and ask for a data export (it may take some days to receive it on your email);
-2. Extract the file received from Adidas, and check this directory:
+Just follow this <a href="https://adidas-runstatic-2-strava.vercel.app/instructions">step-by-step guide!</a>
 
-    > root/Sport-sessions/GPS-data/
+<br />
 
-    You should see a list of _.json_ and _.gpx_ files.
+# Tools used in this project
 
-3. Access <a href="https://developers.strava.com/">https://developers.strava.com/</a> and click on **Create & Manage Your App**. You will be redirected to a form:
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" height="30px"/>
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" height="30px"/>
+<img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" height="30px" /> <img src="https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white" height="30px" />
 
-    ![Alt text](image.png)
-
-4. You may need to update your App Icon. A kitty picture is not mandatory, but highly recommended:
-
-![Alt text](image-1.png)
-
-![Alt text](image-2.png)
-
-5. After the APP creation, you will receive some credentials:
-
-![Alt text](image-3.png)
-
-6. Now go to the <a href="https://adidas-runstatic-2-strava.vercel.app/" >app</a>, and follow the steps.
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" height="30px"/>
+<img src='https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E' />
+<img src='https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white' />
+<img src='https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E' />
